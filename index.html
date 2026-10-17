@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Password Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>Random Password Generator</h1>
+    <p class="subtitle">Choose your options and generate a strong password.</p>
+
+    <div class="output">
+      <input type="text" id="password" placeholder="Your password appears here" readonly aria-label="Generated password" />
+      <button id="copyBtn" type="button">Copy</button>
+    </div>
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+
+    <div class="field">
+      <label for="length">Length: <strong id="lengthValue">12</strong></label>
+      <input type="range" id="length" min="4" max="32" value="12" />
+    </div>
+
+    <fieldset class="options">
+      <legend>Include</legend>
+      <label><input type="checkbox" id="uppercase" checked /> Uppercase (A-Z)</label>
+      <label><input type="checkbox" id="lowercase" checked /> Lowercase (a-z)</label>
+      <label><input type="checkbox" id="numbers" checked /> Numbers (0-9)</label>
+      <label><input type="checkbox" id="symbols" /> Symbols (!@#$%...)</label>
+    </fieldset>
+
+    <div class="strength">
+      <span>Strength:</span>
+      <div class="bar"><div id="strengthFill"></div></div>
+      <span id="strengthText">-</span>
+    </div>
+
+    <button id="generateBtn" type="button" class="primary">Generate Password</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
